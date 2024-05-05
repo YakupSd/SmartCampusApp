@@ -23,7 +23,7 @@ struct ForgotTextFields: View {
                     .padding(.leading,25)
                 Spacer()
             }
-            ENTextFieldWithLabelTop(height: 47,txtFieldText: $vm.forgotEmail,btnImageStyleLeft:.mailIcon, btnImageStyleRight:.none, showTopLabel:false,showRightButton:false, cornerRadius: 7, lineWidth: 4, txtPlaceHolder: "E-Mail Adresi", topLabel: "E-Mail", borderColor : $emailBorderColor,mainBG:Color.white, topLabelRatio: -145,validationType:.email, configuration: .init(keyboardType: .numberPad),systemImageName:"person.fill",systemImageWidth:12.0)
+            ENTextFieldWithLabelTop(height: 47,txtFieldText: $vm.forgotEmail,btnImageStyleLeft:.mailIcon, btnImageStyleRight:.none, showTopLabel:false,showRightButton:false, cornerRadius: 7, lineWidth: 4, txtPlaceHolder: "E-Mail Adresi", topLabel: "E-Mail", borderColor : $emailBorderColor,mainBG:Color.white, topLabelRatio: -145,validationType:.email, configuration: .init(keyboardType: .default),systemImageName:"person.fill",systemImageWidth:12.0)
                 .padding(.leading,22)
                 .padding(.trailing,22)
                 .id(1)

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @EnvironmentObject var router: MainViewsRouter
     @StateObject var vmLogin:LoginViewModel
     @StateObject var vm = ProfileViewModel()
     let items = ["Öğe 1", "Öğe 2", "Öğe 3", "Öğe 4"]
@@ -149,8 +150,13 @@ struct ProfileView: View {
                         .background(.white)
                         .cornerRadius(10)
                         
+                        MainButton(localizableText: "Çıkış", paddingHorizontal: 0, btnWidth: geo.size.width - 50, buttonFillColor: ThemeColors.theme1.redButtonColor,frameHeight: 42, radius: 12, enabled: { return true }) {
+                            router.pushTo(view: MainNavigationView.builder.makeView(PreHomeView(), withNavigationTitle: "", navigationBarHidden: true,backgroundImage: "", isShowRightButton: false, rightImage: ""))
+                        }
+                        .padding(.top,20)
+                        
                     }
-                    
+
                     Spacer()
                     
                 }

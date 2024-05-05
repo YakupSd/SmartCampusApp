@@ -16,6 +16,9 @@ struct SignInView: View {
         GeometryReader { geo in
             ZStack(alignment: .top){
                 ThemeColors.theme1.mainBG.edgesIgnoringSafeArea(.all)
+                    .onTapGesture {
+                        self.hideKeyboard()
+                    }
                     HStack{
                         Image("pageImage")
                             .edgesIgnoringSafeArea(.all)

@@ -29,7 +29,7 @@ struct LoginTextFieldsView: View {
                 Spacer()
             }
           
-            ENTextFieldWithLabelTop(height: 47,txtFieldText: $vm.loginUserName, btnImageStyleLeft:.userIcon, btnImageStyleRight:.none, showTopLabel:false,showRightButton:false, cornerRadius: 7, lineWidth: 4, txtPlaceHolder: "Kullanıcı Adı", topLabel: "Kullanıcı Adı", borderColor : $userNameBorderColor,mainBG:Color.white, topLabelRatio: -145,validationType:.userName, configuration: .init(keyboardType: .numberPad),systemImageName:"person.fill",systemImageWidth:12.0)
+            ENTextFieldWithLabelTop(height: 47,txtFieldText: $vm.loginUserName, btnImageStyleLeft:.userIcon, btnImageStyleRight:.none, showTopLabel:false,showRightButton:false, cornerRadius: 7, lineWidth: 4, txtPlaceHolder: "Kullanıcı Adı", topLabel: "Kullanıcı Adı", borderColor : $userNameBorderColor,mainBG:Color.white, topLabelRatio: -145,validationType:.userName, configuration: .init(keyboardType: .default),systemImageName:"person.fill",systemImageWidth:12.0)
                 .padding(.leading,22)
                 .padding(.trailing,22)
                 .id(1)

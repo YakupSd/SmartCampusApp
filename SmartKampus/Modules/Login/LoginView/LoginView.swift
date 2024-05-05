@@ -13,10 +13,14 @@ struct LoginView: View {
     @EnvironmentObject var router: MainViewsRouter
     @State var showErrorPopUp:Bool = false
     @State var showSuccessPopUp:Bool = false
+
     var body: some View {
             GeometryReader { geo in
                 ZStack(alignment: .top){
                     ThemeColors.theme1.mainBG.edgesIgnoringSafeArea(.all)
+                        .onTapGesture {
+                            self.hideKeyboard()
+                        }
                         HStack{
                             Image("pageImage")
                                 .edgesIgnoringSafeArea(.all)
@@ -39,14 +43,14 @@ struct LoginView: View {
                                
                                 VStack(alignment:.trailing){
                                     ImageButton(localizableText: "Giriş Yap", paddingHorizontal: 12.0,btnWidth: geo.size.width - 45, textColor: .white, frameHeight: 47, txtPadding:10, mainFont: .setCustomFont(name: .PoppinsBold,size:15),enabled: vm.isValid, action: {
-                                        router.pushTo(view: MainNavigationView.builder.makeView(TabbarView(), withNavigationTitle: "", navigationBarHidden: true,backgroundImage: "", isShowRightButton: false, rightImage: ""))
-                                       /*
+
+                                       
                                         if  vm.loginUserName == vm.savedUserName && vm.loginPassword == vm.savedPassword {
                                           showSuccessPopUp = true
                                         }else {
                                             showErrorPopUp = true
                                         }
-                                        */
+                                        
                                        
                                     })
                                     .padding(.top,20)
@@ -96,6 +100,7 @@ struct LoginView: View {
                 if showSuccessPopUp {
                     CustomMainPopUp(popUpImageName: .success, mainTitle: "Başarılı", secondTitle: "Sayfaya yönlendiriliyorsunuz", showYesNoButton: false) {
                         showSuccessPopUp = false
+                        router.pushTo(view: MainNavigationView.builder.makeView(TabbarView(vmLogin: vm), withNavigationTitle: "", navigationBarHidden: true,backgroundImage: "", isShowRightButton: false, rightImage: ""))
                        print("Giriş Başarılı")
                     } actionSecond: {
                         ()

@@ -55,7 +55,7 @@ class LoginViewModel : ObservableObject{
     }
     
     func forgotIsValid()->Bool{
-        if singEmail.count >= 8{
+        if forgotEmail.count >= 8{
             return true
         }
         return false

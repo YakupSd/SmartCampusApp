@@ -9,9 +9,10 @@ import SwiftUI
 
 struct TabbarView: View {
     @StateObject var vm = TabbarViewModel()
+    @StateObject var vmLogin: LoginViewModel
     @State private var selectedTab = 0
     @State var isShowingScanner:Bool = false
-    
+    @State private var scannedCode: String?
     var body: some View {
         TabView(selection: $selectedTab) {
            HomeView()
@@ -20,52 +21,40 @@ struct TabbarView: View {
                 }
                 .tag(0)
 
-            Button(action: {
-                isShowingScanner = true
-            }, label: {
-                Text("QR OKUT")
-                    .font(.setCustomFont(name: .PoppinsBold,size: 50))
-                    .foregroundColor(.black)
-            })
+            Button("Scan QR Code") {
+                self.isShowingScanner = true
+            }
+            .padding()
+            .sheet(isPresented: $isShowingScanner) {
+                QRCodeReader(scannedCode: $scannedCode, isShowingScanner: $isShowingScanner, readingSuccessful: .constant(true))
+            }
                 .tabItem {
                     Image(vm.tab2Image)
                 }
                 .tag(1)
 
-            ProfileView(vmLogin: LoginViewModel())
+            ProfileView(vmLogin: vmLogin)
                 .tabItem {
                     Image(selectedTab != 0 ? "profileGreen" : "profile")
                 }
                 .tag(2)
         }
-        .sheet(isPresented: $isShowingScanner) {
-            QRCodeReader()
-        }
-       
+      
         .background(Color.red)
     }
 }
 
 #Preview {
-    TabbarView()
+    TabbarView(vmLogin:LoginViewModel())
 }
-
-
-
 import SwiftUI
 import AVFoundation
 
 struct QRCodeReader: UIViewControllerRepresentable {
-    @State var scannedCode: String = ""
-    @State var isShowingScanner: Bool = false
-    @State var LicenseSerialNo: String = ""
-    @State var plate: String = ""
-    @State var tc: String = ""
-    @State var plateCountryCode: String = ""
-    @State var LicenseDocumentCode: String = ""
-    @State var readingSuccessful: Bool = false
-    
-    
+    @Binding var scannedCode: String?
+    @Binding var isShowingScanner: Bool
+    @Binding var readingSuccessful: Bool
+
     class Coordinator: NSObject, AVCaptureMetadataOutputObjectsDelegate {
         var parent: QRCodeReader
 
@@ -81,47 +70,10 @@ struct QRCodeReader: UIViewControllerRepresentable {
                 AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
                 parent.scannedCode = stringValue
 
-                // QR kodu başarıyla tarandığında, Coordinator içindeki parseScannedCode fonksiyonunu kullanarak değerleri ayır
-                let parsedValues = self.parseScannedCode(scannedCode: stringValue)
-                self.parent.LicenseSerialNo = String(parsedValues.LicenseSerialNo.dropFirst(2))
-                self.parent.plate = String(parsedValues.plate.dropFirst(2))
-                self.parent.tc = parsedValues.tc
-                self.parent.plateCountryCode = self.extractCountryCode(from: parsedValues.plate)
-                self.parent.LicenseDocumentCode = self.extractLicenseCode(from: parsedValues.LicenseSerialNo)
-
                 parent.isShowingScanner = false
                 parent.readingSuccessful = true
             }
         }
-
-        func parseScannedCode(scannedCode: String) -> (LicenseSerialNo: String, plate: String, tc: String) {
-            let components = scannedCode.components(separatedBy: "-")
-
-            guard components.count == 3 else {
-                return ("Hatalı Format", "", "")
-            }
-
-            let LicenseSerialNo = components[0]
-            let plate = components[1]
-            let tc = components[2]
-
-            return (LicenseSerialNo, plate, tc)
-        }
-        
-        func extractCountryCode(from plate: String) -> String {
-            let numericCharacters = plate.prefix { char in
-                char.isNumber
-            }
-            return String(numericCharacters)
-        }
-        
-        func extractLicenseCode(from licenseSerialNo: String) -> String {
-            let letters = licenseSerialNo.prefix { char in
-                char.isLetter
-            }
-            return String(letters)
-        }
-
     }
 
     func makeCoordinator() -> Coordinator {
@@ -163,7 +115,6 @@ struct QRCodeReader: UIViewControllerRepresentable {
         previewLayer.videoGravity = .resizeAspectFill
         viewController.view.layer.addSublayer(previewLayer)
 
-       
         DispatchQueue.global().async {
             session.startRunning()
         }
@@ -176,3 +127,6 @@ struct QRCodeReader: UIViewControllerRepresentable {
     }
 }
 
+#Preview {
+    QRCodeReader(scannedCode: .constant(""), isShowingScanner: .constant(true), readingSuccessful: .constant(true))
+}
