@@ -1,6 +1,6 @@
 //
 //  Persistence.swift
-//  KampusDestekApp
+//  SmartCampusApp
 //
 //  Created by Yakup Suda on 17.04.2024.
 //
@@ -31,7 +31,7 @@ struct PersistenceController {
     let container: NSPersistentContainer
 
     init(inMemory: Bool = false) {
-        container = NSPersistentContainer(name: "KampusDestekApp")
+        container = NSPersistentContainer(name: "SmartCampusApp")
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }

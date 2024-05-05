@@ -1,6 +1,6 @@
 //
 //  SceneDelegate.swift
-//  KampusDestekApp
+//  SmartCampusApp
 //
 //  Created by Yakup Suda on 17.04.2024.
 //

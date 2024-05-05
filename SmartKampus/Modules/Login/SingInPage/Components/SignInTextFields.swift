@@ -1,6 +1,6 @@
 //
 //  SignInTextFields.swift
-//  KampusDestekApp
+//  SmartCampusApp
 //
 //  Created by Yakup Suda on 21.04.2024.
 //

@@ -1,6 +1,6 @@
 //
 //  CourseRegistrationView.swift
-//  KampusDestekApp
+//  SmartCampusApp
 //
 //  Created by Yakup Suda on 24.04.2024.
 //

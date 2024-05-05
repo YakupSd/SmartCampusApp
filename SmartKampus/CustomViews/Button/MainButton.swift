@@ -1,6 +1,6 @@
 //
 //  MainButton.swift
-//  KampusDestekApp
+//  SmartCampusApp
 //
 //  Created by Yakup Suda on 18.04.2024.
 //

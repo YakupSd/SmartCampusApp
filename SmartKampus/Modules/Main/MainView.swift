@@ -1,6 +1,6 @@
 //
 //  MainView.swift
-//  KampusDestekApp
+//  SmartCampusApp
 //
 //  Created by Yakup Suda on 17.04.2024.
 //
@@ -19,7 +19,7 @@ struct MainView: View {
                        
                 } else {
                     if !UserManager.shared.isLogin()  {
-                        LoginView(vm: LoginViewModel())
+                        PreHomeView(vm: PreHomeViewModel())
                     }
                 }
             }
@@ -30,14 +30,6 @@ struct MainView: View {
         }
     }
 }
-
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainView()
-    }
-}
-
-
 
 #Preview {
     MainView()

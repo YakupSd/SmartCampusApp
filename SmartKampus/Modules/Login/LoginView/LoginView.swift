@@ -1,6 +1,6 @@
 //
 //  LoginView.swift
-//  KampusDestekApp
+//  SmartCampusApp
 //
 //  Created by Yakup Suda on 18.04.2024.
 //
@@ -39,11 +39,14 @@ struct LoginView: View {
                                
                                 VStack(alignment:.trailing){
                                     ImageButton(localizableText: "Giriş Yap", paddingHorizontal: 12.0,btnWidth: geo.size.width - 45, textColor: .white, frameHeight: 47, txtPadding:10, mainFont: .setCustomFont(name: .PoppinsBold,size:15),enabled: vm.isValid, action: {
+                                        router.pushTo(view: MainNavigationView.builder.makeView(HomeView(), withNavigationTitle: "", navigationBarHidden: false,backgroundImage: "", isShowRightButton: false, rightImage: ""))
+                                       /*
                                         if  vm.loginUserName == vm.savedUserName && vm.loginPassword == vm.savedPassword {
                                           showSuccessPopUp = true
                                         }else {
                                             showErrorPopUp = true
                                         }
+                                        */
                                        
                                     })
                                     .padding(.top,20)

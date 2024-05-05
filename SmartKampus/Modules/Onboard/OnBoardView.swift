@@ -1,6 +1,6 @@
 //
 //  OnBoardView.swift
-//  KampusDestekApp
+//  SmartCampusApp
 //
 //  Created by Yakup Suda on 18.04.2024.
 //
@@ -88,7 +88,7 @@ struct OnBoardView: View {
                             .onTapGesture {
                                 isHomeViewActive = true
                                 userManager.setIsOnboarding()
-                                router.pushTo(view: MainNavigationView.builder.makeView(HomeView(vm:HomeViewModel()), withNavigationTitle: "", navigationBarHidden: true,backgroundImage: "", isShowRightButton: false, rightImage: ""))
+                                router.pushTo(view: MainNavigationView.builder.makeView(PreHomeView(vm:PreHomeViewModel()), withNavigationTitle: "", navigationBarHidden: true,backgroundImage: "", isShowRightButton: false, rightImage: ""))
                             }
                         Image("rightdoublearrow")
                             .resizable()
@@ -127,7 +127,7 @@ private extension OnBoardView {
         case .third:
             /// Going to the next feature:
             isHomeViewActive = true
-            router.pushTo(view: MainNavigationView.builder.makeView(HomeView(vm:HomeViewModel()), withNavigationTitle: "", navigationBarHidden: true,backgroundImage: "", isShowRightButton: false, rightImage: ""))
+            router.pushTo(view: MainNavigationView.builder.makeView(PreHomeView(vm:PreHomeViewModel()), withNavigationTitle: "", navigationBarHidden: true,backgroundImage: "", isShowRightButton: false, rightImage: ""))
             
         }
     }

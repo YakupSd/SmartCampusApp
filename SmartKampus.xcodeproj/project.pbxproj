@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F354406C2BE7A9AF001F61CE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F354406B2BE7A9AF001F61CE /* HomeViewModel.swift */; };
 		F394C3502BD05E0600E9755C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F394C34F2BD05E0600E9755C /* ContentView.swift */; };
 		F394C3522BD05E0800E9755C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F394C3512BD05E0800E9755C /* Assets.xcassets */; };
 		F394C3552BD05E0800E9755C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F394C3542BD05E0800E9755C /* Preview Assets.xcassets */; };
@@ -92,11 +93,14 @@
 		F394C4782BD9ABA000E9755C /* MainTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F394C4772BD9ABA000E9755C /* MainTitleView.swift */; };
 		F394C47A2BD9B45E00E9755C /* ImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F394C4792BD9B45E00E9755C /* ImageButton.swift */; };
 		F394C47D2BE6792600E9755C /* CustomMainPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F394C47C2BE6792600E9755C /* CustomMainPopUp.swift */; };
-		F394C4802BE6ABE100E9755C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F394C47F2BE6ABE100E9755C /* HomeView.swift */; };
-		F394C4822BE6ABF200E9755C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F394C4812BE6ABF200E9755C /* HomeViewModel.swift */; };
+		F394C4802BE6ABE100E9755C /* PreHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F394C47F2BE6ABE100E9755C /* PreHomeView.swift */; };
+		F394C4822BE6ABF200E9755C /* PreHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F394C4812BE6ABF200E9755C /* PreHomeViewModel.swift */; };
+		F394C4852BE7951200E9755C /* WebViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F394C4842BE7951200E9755C /* WebViewContainer.swift */; };
+		F394C4882BE79F1D00E9755C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F394C4872BE79F1D00E9755C /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F354406B2BE7A9AF001F61CE /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		F394C34A2BD05E0600E9755C /* SmartKampus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartKampus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F394C34F2BD05E0600E9755C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F394C3512BD05E0800E9755C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -184,8 +188,10 @@
 		F394C4772BD9ABA000E9755C /* MainTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTitleView.swift; sourceTree = "<group>"; };
 		F394C4792BD9B45E00E9755C /* ImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButton.swift; sourceTree = "<group>"; };
 		F394C47C2BE6792600E9755C /* CustomMainPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMainPopUp.swift; sourceTree = "<group>"; };
-		F394C47F2BE6ABE100E9755C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		F394C4812BE6ABF200E9755C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		F394C47F2BE6ABE100E9755C /* PreHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreHomeView.swift; sourceTree = "<group>"; };
+		F394C4812BE6ABF200E9755C /* PreHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreHomeViewModel.swift; sourceTree = "<group>"; };
+		F394C4842BE7951200E9755C /* WebViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewContainer.swift; sourceTree = "<group>"; };
+		F394C4872BE79F1D00E9755C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,7 +311,8 @@
 		F394C37A2BD05F8600E9755C /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				F394C47E2BE6ABD100E9755C /* HomeView */,
+				F394C4862BE79F1100E9755C /* HomeView */,
+				F394C47E2BE6ABD100E9755C /* PreHomeView */,
 				F394C46F2BD9A50F00E9755C /* CourseRegistration */,
 				F394C4562BD5408E00E9755C /* Login */,
 				F394C4232BD1AF3A00E9755C /* Onboard */,
@@ -326,6 +333,7 @@
 		F394C3C02BD05FC400E9755C /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				F394C4832BE7950700E9755C /* WebView */,
 				F394C47B2BE678B100E9755C /* PopUp */,
 				F394C4722BD9AB1C00E9755C /* PickerView */,
 				F394C4452BD1B3F900E9755C /* TextField */,
@@ -573,11 +581,28 @@
 			path = PopUp;
 			sourceTree = "<group>";
 		};
-		F394C47E2BE6ABD100E9755C /* HomeView */ = {
+		F394C47E2BE6ABD100E9755C /* PreHomeView */ = {
 			isa = PBXGroup;
 			children = (
-				F394C47F2BE6ABE100E9755C /* HomeView.swift */,
-				F394C4812BE6ABF200E9755C /* HomeViewModel.swift */,
+				F394C47F2BE6ABE100E9755C /* PreHomeView.swift */,
+				F394C4812BE6ABF200E9755C /* PreHomeViewModel.swift */,
+			);
+			path = PreHomeView;
+			sourceTree = "<group>";
+		};
+		F394C4832BE7950700E9755C /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				F394C4842BE7951200E9755C /* WebViewContainer.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
+		F394C4862BE79F1100E9755C /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				F394C4872BE79F1D00E9755C /* HomeView.swift */,
+				F354406B2BE7A9AF001F61CE /* HomeViewModel.swift */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -696,7 +721,7 @@
 				F394C3572BD05E0800E9755C /* Persistence.swift in Sources */,
 				F394C36B2BD05E2F00E9755C /* NavigationControllers.swift in Sources */,
 				F394C3502BD05E0600E9755C /* ContentView.swift in Sources */,
-				F394C4822BE6ABF200E9755C /* HomeViewModel.swift in Sources */,
+				F394C4822BE6ABF200E9755C /* PreHomeViewModel.swift in Sources */,
 				F394C4742BD9AB2D00E9755C /* PickerViewSelected.swift in Sources */,
 				F394C36D2BD05E2F00E9755C /* MainNavigationView.swift in Sources */,
 				F394C42B2BD1AF7600E9755C /* UserManager.swift in Sources */,
@@ -708,11 +733,13 @@
 				F394C4592BD540E600E9755C /* LoginView.swift in Sources */,
 				F394C4762BD9AB4600E9755C /* PickerRowView.swift in Sources */,
 				F394C4282BD1AF3A00E9755C /* PageModel.swift in Sources */,
+				F394C4852BE7951200E9755C /* WebViewContainer.swift in Sources */,
 				F394C4472BD1B3F900E9755C /* ENTextFieldWithLabelTop.swift in Sources */,
 				F394C36A2BD05E2F00E9755C /* RootNavigationController.swift in Sources */,
-				F394C4802BE6ABE100E9755C /* HomeView.swift in Sources */,
+				F394C4802BE6ABE100E9755C /* PreHomeView.swift in Sources */,
 				F394C4442BD1B3C500E9755C /* MainButton.swift in Sources */,
 				F394C47A2BD9B45E00E9755C /* ImageButton.swift in Sources */,
+				F354406C2BE7A9AF001F61CE /* HomeViewModel.swift in Sources */,
 				F394C3B62BD05F8600E9755C /* MainViewModel.swift in Sources */,
 				F394C36C2BD05E2F00E9755C /* CustomHostingController.swift in Sources */,
 				F394C3772BD05F2800E9755C /* ThemeColors.swift in Sources */,
@@ -735,6 +762,7 @@
 				F394C4212BD1AF1000E9755C /* UIFont+Extension.swift in Sources */,
 				F394C43C2BD1B36500E9755C /* ENNavigationBarCompleted.swift in Sources */,
 				F394C4622BD543EB00E9755C /* SignInTextFields.swift in Sources */,
+				F394C4882BE79F1D00E9755C /* HomeView.swift in Sources */,
 				F394C4492BD1B45600E9755C /* TextFieldKeyboardType.swift in Sources */,
 				F394C4652BD5473200E9755C /* ForgotPassword.swift in Sources */,
 			);

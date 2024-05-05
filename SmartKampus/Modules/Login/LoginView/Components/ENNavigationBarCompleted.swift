@@ -1,6 +1,6 @@
 //
 //  ENNavigationBarCompleted.swift
-//  KampusDestek
+//  SmartCampusApp
 //
 //  Created by Yakup Suda on 6.03.2024.
 //

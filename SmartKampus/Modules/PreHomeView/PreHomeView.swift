@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PreHomeView: View {
-    @StateObject var vm = HomeViewModel()
+    @StateObject var vm = PreHomeViewModel()
     @EnvironmentObject var router: MainViewsRouter
     var body: some View {
         GeometryReader { geo in
