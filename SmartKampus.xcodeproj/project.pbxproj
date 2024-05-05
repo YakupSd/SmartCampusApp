@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		F354406C2BE7A9AF001F61CE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F354406B2BE7A9AF001F61CE /* HomeViewModel.swift */; };
+		F354406F2BE7B553001F61CE /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F354406E2BE7B553001F61CE /* TabbarView.swift */; };
+		F35440712BE7B62C001F61CE /* TabbarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35440702BE7B62C001F61CE /* TabbarViewModel.swift */; };
+		F35440742BE7B9DB001F61CE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35440732BE7B9DB001F61CE /* ProfileView.swift */; };
+		F35440762BE7B9E1001F61CE /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35440752BE7B9E1001F61CE /* ProfileViewModel.swift */; };
+		F35440792BE7C06E001F61CE /* AsistanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35440782BE7C06E001F61CE /* AsistanView.swift */; };
 		F394C3502BD05E0600E9755C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F394C34F2BD05E0600E9755C /* ContentView.swift */; };
 		F394C3522BD05E0800E9755C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F394C3512BD05E0800E9755C /* Assets.xcassets */; };
 		F394C3552BD05E0800E9755C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F394C3542BD05E0800E9755C /* Preview Assets.xcassets */; };
@@ -101,6 +106,11 @@
 
 /* Begin PBXFileReference section */
 		F354406B2BE7A9AF001F61CE /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		F354406E2BE7B553001F61CE /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
+		F35440702BE7B62C001F61CE /* TabbarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewModel.swift; sourceTree = "<group>"; };
+		F35440732BE7B9DB001F61CE /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		F35440752BE7B9E1001F61CE /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		F35440782BE7C06E001F61CE /* AsistanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsistanView.swift; sourceTree = "<group>"; };
 		F394C34A2BD05E0600E9755C /* SmartKampus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartKampus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F394C34F2BD05E0600E9755C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F394C3512BD05E0800E9755C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -205,6 +215,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F354406D2BE7B545001F61CE /* TabbarView */ = {
+			isa = PBXGroup;
+			children = (
+				F354406E2BE7B553001F61CE /* TabbarView.swift */,
+				F35440702BE7B62C001F61CE /* TabbarViewModel.swift */,
+			);
+			path = TabbarView;
+			sourceTree = "<group>";
+		};
+		F35440722BE7B9C8001F61CE /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				F35440732BE7B9DB001F61CE /* ProfileView.swift */,
+				F35440752BE7B9E1001F61CE /* ProfileViewModel.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		F35440772BE7C060001F61CE /* Asistan */ = {
+			isa = PBXGroup;
+			children = (
+				F35440782BE7C06E001F61CE /* AsistanView.swift */,
+			);
+			path = Asistan;
+			sourceTree = "<group>";
+		};
 		F394C3412BD05E0600E9755C = {
 			isa = PBXGroup;
 			children = (
@@ -311,6 +347,9 @@
 		F394C37A2BD05F8600E9755C /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				F35440772BE7C060001F61CE /* Asistan */,
+				F35440722BE7B9C8001F61CE /* Profile */,
+				F354406D2BE7B545001F61CE /* TabbarView */,
 				F394C4862BE79F1100E9755C /* HomeView */,
 				F394C47E2BE6ABD100E9755C /* PreHomeView */,
 				F394C46F2BD9A50F00E9755C /* CourseRegistration */,
@@ -720,13 +759,16 @@
 				F394C3792BD05F6800E9755C /* SceneDelegate.swift in Sources */,
 				F394C3572BD05E0800E9755C /* Persistence.swift in Sources */,
 				F394C36B2BD05E2F00E9755C /* NavigationControllers.swift in Sources */,
+				F35440712BE7B62C001F61CE /* TabbarViewModel.swift in Sources */,
 				F394C3502BD05E0600E9755C /* ContentView.swift in Sources */,
 				F394C4822BE6ABF200E9755C /* PreHomeViewModel.swift in Sources */,
 				F394C4742BD9AB2D00E9755C /* PickerViewSelected.swift in Sources */,
 				F394C36D2BD05E2F00E9755C /* MainNavigationView.swift in Sources */,
+				F354406F2BE7B553001F61CE /* TabbarView.swift in Sources */,
 				F394C42B2BD1AF7600E9755C /* UserManager.swift in Sources */,
 				F394C3B72BD05F8600E9755C /* MainView.swift in Sources */,
 				F394C36E2BD05E2F00E9755C /* Router.swift in Sources */,
+				F35440762BE7B9E1001F61CE /* ProfileViewModel.swift in Sources */,
 				F394C46E2BD549CA00E9755C /* ResetPassTextFields.swift in Sources */,
 				F394C35A2BD05E0800E9755C /* KampusDestekApp.xcdatamodeld in Sources */,
 				F394C46B2BD549B000E9755C /* ResetPassword.swift in Sources */,
@@ -737,6 +779,7 @@
 				F394C4472BD1B3F900E9755C /* ENTextFieldWithLabelTop.swift in Sources */,
 				F394C36A2BD05E2F00E9755C /* RootNavigationController.swift in Sources */,
 				F394C4802BE6ABE100E9755C /* PreHomeView.swift in Sources */,
+				F35440792BE7C06E001F61CE /* AsistanView.swift in Sources */,
 				F394C4442BD1B3C500E9755C /* MainButton.swift in Sources */,
 				F394C47A2BD9B45E00E9755C /* ImageButton.swift in Sources */,
 				F354406C2BE7A9AF001F61CE /* HomeViewModel.swift in Sources */,
@@ -754,6 +797,7 @@
 				F394C3C22BD05FDE00E9755C /* DisableBackButton.swift in Sources */,
 				F394C47D2BE6792600E9755C /* CustomMainPopUp.swift in Sources */,
 				F394C42F2BD1AFB400E9755C /* ENOnboardingNextButton.swift in Sources */,
+				F35440742BE7B9DB001F61CE /* ProfileView.swift in Sources */,
 				F394C43B2BD1B36500E9755C /* LoginRectangleView.swift in Sources */,
 				F394C3CF2BD0693500E9755C /* LoginViewModel.swift in Sources */,
 				F394C4712BD9A53000E9755C /* CourseRegistrationView.swift in Sources */,

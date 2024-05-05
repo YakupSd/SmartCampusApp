@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject var router: MainViewsRouter
     @StateObject var vm = HomeViewModel()
+    @State var sheetOpen: Bool = false
     var body: some View {
         GeometryReader { geo in
             ZStack(alignment:.top){
@@ -31,12 +33,25 @@ struct HomeView: View {
                                 }
                             }
                         }
-                    }
-                   
-
-                       
+                    }  
                 } .padding(.top,180)
+                
+                Image("chat")
+                    .padding(.top,geo.size.width + 250)
+                    .padding(.leading,250)
+                    .onTapGesture {
+                        
+                        sheetOpen = true
+                      
+                        
+                        //sayfa yönelndirmesi
+                    }
+                
             }.frame(width: geo.size.width, height: geo.size.height, alignment: .center)
+                .sheet(isPresented: $sheetOpen) {
+                   AsistanView()
+                        .edgesIgnoringSafeArea(.all)
+                }
         }
     }
 }

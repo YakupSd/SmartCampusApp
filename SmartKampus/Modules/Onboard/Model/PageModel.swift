@@ -62,8 +62,8 @@ enum OnboardingItem: Int {
     var labelColor: Color {
         switch self {
         case .first: return ThemeColors.theme1.greenText
-        case .second: return .black
-        case .third: return .white
+        case .second: return ThemeColors.theme1.greenText
+        case .third: return ThemeColors.theme1.greenText
         }
     }
 }
